@@ -1,0 +1,254 @@
+$LOAD_PATH << '.' to make Ruby aware that included files must be searched in the current directory.
+
+Ruby include Statement [include modulename]
+	- You can embed a module in a class. To embed a module in a class, you use the include statement in the class.
+
+Line Endings in Ruby Program
+	- Ruby interprets semicolons axnd newline characters as the ending of a statement. However, if Ruby encounters operators, such as +, −, or backslash at the end of a line, they indicate the continuation of a statement.
+
+Ruby BEGIN Statement
+	- Declares code to be called before the program is run.
+
+Declares code to be called at the end of the program.
+	- Declares code to be called at the end of the program.
+
+block comment conceals several lines from the interpreter with 
+	=begin
+	=end
+
+Variables in a Ruby Class
+	- Instance Variables: are preceded by the at sign (@) 
+	- Class Variables: are preceded by the sign (@@)
+	- Global Variables: are always preceded by the dollar sign ($)
+
+Custom Method to Create Ruby Objects
+	- initialize method is a special type of method, which will be executed when the new method of the class is called with parameters.
+
+Member Functions in Ruby Class
+	- def function
+	      statement 1
+	  end
+
+Ruby Pseudo-Variables
+	self − The receiver object of the current method.
+	true − Value representing true.
+	false − Value representing false.
+	nil − Value representing undefined.
+	__FILE__ − The name of the current source file.
+	__LINE__ − The current line number in the source file.
+
+Ruby expression into a string using the sequence #{ expr }
+	- puts "Multiplication Value : #{24*60*60}";
+	- Multiplication Value : 86400
+
+Ruby Arrays
+	ary = [  "fred", 10, 3.14, "This is a string", "last element", ]
+	ary.each do |i|
+	   puts i
+	end
+
+Ruby Hashes [=> between the key and the value]
+	hsh = colors = { "red" => 0xf00, "green" => 0x0f0, "blue" => 0x00f }
+	hsh.each do |key, value|
+	   print key, " is ", value, "\n"
+	end
+
+Ruby Ranges
+	(10..15).each do |n| 
+	   print n, ' ' 
+	end
+
+Ruby Comparison Operators [Other than Java]
+	<=>	
+	Combined comparison operator. Returns 0 if first operand equals second, 1 if first operand is greater than the second and -1 if first operand is less than the second.	
+
+	===	
+	Used to test equality within a when clause of a case statement.	
+
+	.eql?	
+	True if the receiver and argument have both the same type and equal values.	
+
+	equal?	
+	True if the receiver and argument have the same object id.	
+
+Ruby Assignment Operators
+	**=	
+	Exponent AND assignment operator, performs exponential (power) calculation on operators and assign value to the left operand.	
+
+Ruby Parallel Assignment
+	a, b, c = 10, 20, 30
+
+Ruby Logical Operators
+	and
+	or
+	&&
+	||
+	!
+	not
+
+Ruby Ternary Operator
+	?:
+
+Ruby Range Operators
+	..
+	1..10 Creates a range from 1 to 10 inclusive.
+
+	...
+	1...10 Creates a range from 1 to 9.
+
+Ruby defined? Operators
+	- defined? variable # True if variable is initialized
+	- defined? method_call # True if a method is defined
+	- defined? super # True if a method exists that can be called with super user
+	- defined? yield   # True if a code block has been passed
+
+Ruby Dot "." and Double Colon "::" Operators
+	:: 
+	is a unary operator that allows: constants, instance methods and class methods defined within a class or module, to be accessed from anywhere outside the class or module.		
+
+	MR_COUNT = 0         # constant defined on main Object class
+	module Foo
+	   MR_COUNT = 0
+	   ::MR_COUNT = 1    # set global count to 1
+	   MR_COUNT = 2      # set local count to 2
+	end
+	puts MR_COUNT        # this is the global constant
+	puts Foo::MR_COUNT   # this is the local "Foo" constant
+	
+Ruby if...else Statement
+	x = 1
+	if x > 2
+	   puts "x is greater than 2"
+	elsif x <= 2 and x!=0
+	   puts "x is 1"
+	else
+	   puts "I can't guess the number"
+	end
+
+Ruby if modifier
+	$debug = 1
+	print "debug\n" if $debug
+
+Ruby unless Statement
+	x = 1 
+	unless x>=2
+	   puts "x is less than 2"
+	 else
+	   puts "x is greater than 2"
+	end	
+
+Ruby unless modifier
+	$var =  1
+	print "1 -- Value is set\n" if $var
+	print "2 -- Value is set\n" unless $var
+
+Ruby case Statement
+	$age =  5
+	case $age
+	when 0 .. 2
+	   puts "baby"
+	when 3 .. 6
+	   puts "little child"
+	when 7 .. 12
+	   puts "child"
+	when 13 .. 18
+	   puts "youth"
+	else
+	   puts "adult"
+	end	
+
+Ruby while Statement
+	$i = 0
+	$num = 5
+	while $i < $num  do
+	   puts("Inside the loop i = #$i" )
+	   $i +=1
+	end
+
+Ruby until Statement
+	$i = 0
+	$num = 5
+
+	until $i > $num  do
+	   puts("Inside the loop i = #$i" )
+	   $i +=1;
+	end	
+
+Ruby for Statement
+	for i in 0..5
+	   puts "Value of local variable is #{i}"
+	end
+
+	(0..5).each do |i|
+	   puts "Value of local variable is #{i}"
+	end
+
+Ruby break Statement
+	for i in 0..5
+	   if i > 2 then
+	      break
+	   end
+	   puts "Value of local variable is #{i}"
+	end
+
+Ruby next Statement
+	for i in 0..5
+	   if i < 2 then
+	      next
+	   end
+	   puts "Value of local variable is #{i}"
+	end
+
+Ruby redo Statement [ Restarts this iteration of the most internal loop, without checking loop condition. ]
+	for i in 0..5
+	   if i < 2 then
+	      puts "Value of local variable is #{i}"
+	      redo
+	   end
+	end
+
+Ruby retry Statement [ restart from the beginning of the begin body ]
+	begin
+	   do_something # exception raised
+	rescue
+	   # handles error
+	   retry  # restart from beginning
+	end
+
+	for i in 1..5
+	   retry if some_condition # restart from i == 1
+	end
+
+Ruby Class
+	Ruby - Methods
+		- The most important drawback to using methods with parameters is that you need to remember the number of parameters whenever you call such methods. 
+		- Every method in Ruby returns a value by default. This returned value will be the value of the last statement.
+		- When a method is defined outside of the class definition, the method is marked as private by default. On the other hand, the methods defined in the class definition are marked as public by default.
+		- return values 
+			def test
+			   i = 100
+			   j = 200
+			   k = 300
+			return i, j, k
+
+		Variable Number of Parameters
+			def sample (*test)
+			   puts "The number of parameters is #{test.length}"
+			   for i in 0...test.length
+			      puts "The parameters are #{test[i]}"
+			   end
+			end	
+
+Ruby alias Statement
+	alias foo bar
+	alias $MATCH $&	
+
+
+
+Resque:
+	- Resque (pronounced like "rescue") is a Redis-backed library for creating background jobs, placing those jobs on multiple queues, and processing them later.
+	- Background jobs can be any Ruby class or module that responds to perform. Your existing classes can easily be converted to background jobs or you can create new classes specifically to do work. Or, you can do both.
+	- Resque is heavily inspired by DelayedJob (which rocks) and comprises three parts:
+		- A Ruby library for creating, querying, and processing jobs
+		- A Rake task for starting a worker which processes jobs
+		- A Sinatra app for monitoring queues, jobs, and workers.
